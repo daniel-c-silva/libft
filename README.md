@@ -1,5 +1,3 @@
-*This project has been created as part of the 42 curriculum by ruicarva.*
-
 # Libft
 ## My first C library: libc functions re-coded from scratch, plus extra utilities and linked lists.
  
