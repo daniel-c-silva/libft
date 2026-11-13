@@ -6,7 +6,7 @@
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Updated: 2026/11/09 18:07:04 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
+	while ((lst -> next) != NULL)
+	{
+		lst = lst -> next;
+	}
 	return (lst);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/04 16:10:43 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/05 13:04:22 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*p;
+	unsigned char	*ptr;
 	size_t			i;
 
-	p = (unsigned char *)s;
+	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		p[i] = (unsigned char)c;
+		ptr[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);

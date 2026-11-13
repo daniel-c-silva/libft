@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/06 15:40:48 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/09 18:06:03 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static size_t	num_len(long n)
+static size_t	numlen(long n)
 {
 	size_t	len;
 
@@ -25,7 +25,7 @@ static size_t	num_len(long n)
 	}
 	while (n >= 10)
 	{
-		n /= 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
@@ -33,28 +33,27 @@ static size_t	num_len(long n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
 	long	nb;
 	size_t	len;
+	char	*result;
 
 	nb = n;
-	len = num_len(nb);
-	str = malloc(len + 1);
-	if (!str)
+	len = numlen(nb);
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
 		return (NULL);
-	str[len] = '\0';
+	result[len] = '\0';
+	if (nb == 0)
+		result[0] = '0';
 	if (nb < 0)
 	{
-		str[0] = '-';
+		result[0] = '-';
 		nb = -nb;
 	}
-	if (nb == 0)
-		str[0] = '0';
 	while (nb > 0)
 	{
-		len--;
-		str[len] = (char)('0' + nb % 10);
+		result[--len] = (nb % 10) + '0';
 		nb /= 10;
 	}
-	return (str);
+	return (result);
 }

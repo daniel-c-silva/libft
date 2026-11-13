@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/09 14:58:58 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/09 18:15:30 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*node;
+	t_list	*head;
+	t_list	*box;
 	void	*content;
 
-	new_list = NULL;
-	while (lst && f && del)
+	head = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
+	while (lst != NULL)
 	{
 		content = f(lst->content);
-		node = ft_lstnew(content);
-		if (!node)
+		box = ft_lstnew(content);
+		if (!box)
 		{
 			del(content);
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, node);
+		ft_lstadd_back(&head, box);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (head);
 }

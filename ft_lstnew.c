@@ -6,7 +6,7 @@
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Updated: 2026/11/07 22:19:53 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*node;
+	t_list	*ptr;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
+	ptr = malloc(sizeof(t_list));
+	if (!ptr)
 		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
 }

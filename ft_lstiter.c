@@ -6,7 +6,7 @@
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Updated: 2026/11/04 00:54:41 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst && f)
+	if (lst && f)
 	{
-		f(lst->content);
-		lst = lst->next;
+		while (lst != NULL)
+		{
+			f(lst->content);
+			lst = lst->next;
+		}
 	}
 }

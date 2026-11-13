@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/06 13:15:55 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/06 13:20:39 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*res;
-	size_t	l1;
-	size_t	l2;
+	char	*joined;
+	size_t	len1;
+	size_t	len2;
 
 	if (!s1 || !s2)
 		return (NULL);
-	l1 = ft_strlen(s1);
-	l2 = ft_strlen(s2);
-	res = malloc(l1 + l2 + 1);
-	if (!res)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	joined = malloc(len1 + len2 + 1);
+	if (!joined)
 		return (NULL);
-	ft_memcpy(res, s1, l1);
-	ft_memcpy(res + l1, s2, l2 + 1);
-	return (res);
+	ft_memcpy(joined, s1, len1);
+	ft_memcpy(joined + len1, s2, len2 + 1);
+	return (joined);
 }

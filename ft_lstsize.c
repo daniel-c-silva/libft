@@ -6,21 +6,21 @@
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Updated: 2026/11/09 18:07:55 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	n;
+	int	count;
 
-	n = 0;
-	while (lst)
+	count = 0;
+	while (lst != NULL)
 	{
-		n++;
-		lst = lst->next;
+		count++;
+		lst = lst -> next;
 	}
-	return (n);
+	return (count);
 }

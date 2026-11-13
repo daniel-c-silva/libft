@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/04 13:25:41 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/09 20:18:54 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
-	size_t	i;
+	int	i;
 
-	last = NULL;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (char)c)
-			last = (char *)&s[i];
 		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (last);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+		{
+			return ((char *)(s + i));
+		}
+		i--;
+	}
+	return (NULL);
 }

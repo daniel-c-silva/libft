@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Created: 2026/11/03 21:18:47 by ruicarva          #+#    #+#             */
+/*   Updated: 2026/11/03 21:24:51 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
+	{
+		c = (c + 32);
+	}
 	return (c);
 }

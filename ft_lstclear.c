@@ -6,7 +6,7 @@
 /*   By: ruicarva <ruicarva@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 12:00:00 by ruicarva          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:00 by ruicarva         ###   ########.fr       */
+/*   Updated: 2026/11/09 18:06:31 by ruicarva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*temp_list;
 
 	if (lst && del)
 	{
-		while (*lst)
+		while (*lst != NULL)
 		{
-			tmp = (*lst)->next;
+			temp_list = (*lst)->next;
 			ft_lstdelone(*lst, del);
-			*lst = tmp;
+			*lst = temp_list;
 		}
 	}
 }
